@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng kí học viên</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            min-height: 100vw;
+            font-family: 'Roboto', sans-serif;
+            font-family: sans-serif;
+            background: url('https://ephoto360.com/uploads/effect-data/ephoto360.com/aacc11ed5/04min5f3c8eb3bf483.jpg');
+            background-size: cover;
+        }
+        .yuki{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width:40%;
+            padding:6rem;
+            background: rgba(0,0,0,.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0,0,0,.5);
+            border-radius: 10px;
+        }
+        span {
+            color: #d61b06;
+        }
+        label {
+            color: cornflowerblue;
+        }
+        input {
+            width: 90px ; height: 20px;
+            padding: 12px 80px;
+            margin: 20px 0;
+            box-sizing: border-box;
+            border: 1px solid purple;
+            border-radius: 4px;
+        }
+        }
+        input[type=email] {
+            width: 70px ; height: 20px;
+            padding: 12px 80px;
+            margin: 30px 0;
+            box-sizing: border-box;
+            border: 1px solid purple;
+            border-radius: 5px;
+        }
+        input[type=checkbox] {
+            width: 20px ; height: 20px;
+            padding: 20px 20px;
+            margin: 30px 0;
+            box-sizing: border-box;
+            border: 1px solid purple;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="yuki">
+
+    <form>
+
+        <h1><span>Đăng kí Học Viên</span></h1>
+        <label>Họ Tên</label>
+        <input  style="margin-left: 30px" type="text" name="Hoten"><br>
+        <label>Ngày Sinh</label>
+        <input  style="margin-left: 11px" type="text" name="Ngaysinh"><br>
+
+        <label>Giới Tính</label>
+        <input  type="radio" name="gt" value="male" ><span>Nam</span>
+        <input  type="radio" name="gt" value="Female" ><span>Nữ</span><br>
+
+        <label>Địa Chỉ</label>
+        <input style="margin-left: 30px"  type="text" name="diachi"><br>
+        <label>Lớp</label>
+        <select name="lop">
+            <option style="margin-left: 30px" value="Chọn Lớp">Chọn Lớp</option></select><br>
+        <label>Email</label>
+        <input  style="margin-left: 40px" type="text" name="email"><br>
+
+        <label>Điện thoại</label>
+        <input  style="margin-left: 16px" type="text" name="sdt"><br>
+
+        <button style="margin-left: 177px"  type="submit">Đăng kí</button>
+        <button style="margin-left: 17px" type="reset">Reset</button>
+    </form>
+
+</div>
+</body>
+</html>

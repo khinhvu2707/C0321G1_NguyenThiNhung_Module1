@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Form đơn giản</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            min-height: 100vw;
+            font-family: 'Roboto', sans-serif;
+            font-family: sans-serif;
+            background: url('http://uyenshop.vn/wp-content/uploads/2013/06/y-nghia-hoa-hong-xanh-1-374x233.jpg');
+            background-size: cover;
+        }
+        .form_dang_nhap{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width:40%;
+            padding:6rem;
+            background: rgba(0,0,0,.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0,0,0,.5);
+            border-radius: 10px;
+        }
+        span {
+            color: #d61b06;
+        }
+        label {
+            color: cornflowerblue;
+        }
+        input {
+            width: 90px ; height: 20px;
+            padding: 12px 80px;
+            margin: 20px 0;
+            box-sizing: border-box;
+            border: 1px solid purple;
+            border-radius: 4px;
+        }
+        }
+        input[type=email] {
+            width: 70px ; height: 20px;
+            padding: 12px 80px;
+            margin: 30px 0;
+            box-sizing: border-box;
+            border: 1px solid purple;
+            border-radius: 5px;
+        }
+        input[type=checkbox] {
+            width: 20px ; height: 20px;
+            padding: 20px 20px;
+            margin: 30px 0;
+            box-sizing: border-box;
+            border: 1px solid purple;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="form_dang_nhap">
+    <form>
+        <h1><span>SỞ Thích Của Bạn</span></h1>
+        <label>Họ Tên</label>
+        <input type="text" name="Họ Tên"><br>
+        <label>Email  </label>
+        <input style="margin-left: 11px"type="email" name="Email"><br>
+        <label>Sở Thích</label>
+        <input  type="checkbox" name="Sothich" value="Thethao"><span>Thể Thao</span>
+        <input style="margin-left: 30px" type="Checkbox" name="Sothich" value="amnhac"><span>Âm Nhạc</span>
+        <input style="margin-left: 30px" type="Checkbox" name="Sothich" value="docsach"><span>Đọc Sách</span><br>
+        <input style="margin-left: 69px" type="checkbox" name="Sothich" value="luotweb"><span>Lướt Webv</span>
+        <input  style="margin-left: 17px" type="checkbox" name="Sothich" value="game"><span>Chơi Game</span>
+        <input  style="margin-left: 17px" type="checkbox" name="Sothich" value="dienanh"><span>Điện Ảnh</span><br>
+        <input style="margin-left: 69px" type="checkbox" name="Sothich" value="dulich"><span>Du Lịch</span><br>
+        <button style="margin-left: 177px"  type="submit">Gửi Thông Tin</button>
+        <button style="margin-left: 17px" type="reset">Reset</button>
+    </form>
+</div>
+</body>
+</html>
+
+
