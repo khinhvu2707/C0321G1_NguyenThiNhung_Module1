@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-image : url("https://anhdepblog.com/wp-content/uploads/2018/04/hinh-anh-hoa-cuc-dep-6.jpg");
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+   <table style="width:50%; height:100px; margin-left: 400px; margin-top: 50px">
+
+  <tr>
+      <th>Amount</th>
+       <th>From Currency</th>
+       <th>To Currency</th>
+       <th></th>
+  </tr>
+      <tr>
+
+          <td style="text-align: center">
+                <input type="text" id="tien" placeholder="nhap tien"> </td>
+          <td style="text-align: center">
+                <select id ="chon1">
+                    <option>VND</option>
+                    <option>USD</option>
+                </select>
+          </td>
+          <td style="text-align: center">
+                <select id="chon2">
+                <option>USD</option>
+                <option>VND</option>
+                </select>
+          </td>
+          <td colspan="4">
+                 <button type="button" id="nhaptien" onclick="doi()">Convert</button>
+          </td>
+       </tr>
+       <tr>
+          <td style="text-align: center" rowspan="4"><p>Result:<span id="ketqua"></span></p></td>
+       </tr>
+   </table>
+</form>
+    <script>
+        function doi() {
+            let y = document.getElementById("tien").value;
+
+
+            let a = document.getElementById("chon1").value;
+            let b = document.getElementById("chon2").value;
+            let nhapy =parseInt(y);
+
+            if (a == "VND" && b == "USD"){
+                let c = 0;
+                c = nhapy / 23.075;
+                d = nhapy * 23.075;
+                document.getElementById("ketqua").innerText = c;}
+            else
+                if (a == "VND"){
+                    document.getElementById("ketqua").innerText = nhapy;
+
+
+                } else
+                    if (b == "VND"){
+                    document.getElementById("ketqua").innerText = d;
+                }   else {
+                    document.getElementById("ketqua").innerText = nhapy;
+                }
+            }
+
+    </script>
+
+</body>
+</html>

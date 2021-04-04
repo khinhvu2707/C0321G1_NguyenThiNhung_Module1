@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính cơ bản</title>
+    <style>
+        body {
+            background-image : url("https://thumbs.dreamstime.com/z/close-up-beautiful-woman-playing-acoustic-guitar-walking-street-watercolor-painting-background-abstract-134171466.jpg");
+        }
+        #yu {
+            margin-top: 100px;
+        }
+        #ki {margin-top: 20px;}
+    </style>
+</head>
+<body>
+
+<div id="yu"><input type="text" id="nhap1" placeholder="Nhập số thứ nhất">
+<input type="text" id="nhap2" placeholder="Nhập số thứ hai"><br></div>
+
+<div id="ki"><button type="button" id="cong" onclick="phepcong()">Addition(+)</button>
+<button type="button" id="tru" onclick="pheptru()">Subtraction(-)</button>
+<button type="button" id="nhan" onclick="phepnhan()">Multiplication(X)</button>
+<button type="button" id="chia" onclick="phepchia()">Division(/)</button>
+<p>Result: <span id="ketqua"></span></p></div>
+<script>
+
+
+    function phepcong() {
+        let a=document.getElementById("nhap1").value;
+        let b=document.getElementById("nhap2").value;
+        let cong=parseFloat(a)+parseFloat(b);
+        document.getElementById("ketqua").innerText= cong;
+
+    }
+    function pheptru() {
+        let a=document.getElementById("nhap1").value;
+        let b=document.getElementById("nhap2").value;
+        let tru=parseFloat(a)-parseFloat(b);
+        document.getElementById("ketqua").innerText= tru;
+    }
+    function phepnhan() {
+        let a= document.getElementById("nhap1").value;
+        let b= document.getElementById("nhap2").value;
+        let nhan= parseFloat(a)*parseFloat(b);
+        document.getElementById("ketqua").innerText= nhan;
+
+    }
+    function phepchia() {
+        let a= document.getElementById("nhap1").value;
+        let b= document.getElementById("nhap2").value;
+        let chia= parseFloat(a)/parseFloat(b);
+        document.getElementById("ketqua").innerText= chia;
+
+    }
+
+</script>
+</body>
+</html>

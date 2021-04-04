@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính</title>
+    <style>
+        body {
+            background-image : url("https://tophinhnen.com/wp-content/uploads/2018/02/hinh-nen-hoa-hong-10.jpg");
+        }
+        #maytinh{
+            width:320px;
+            margin-top: 100px;
+            margin-left: 130px;
+
+
+        }
+        #banphim{
+            width: 320px;
+            margin-top: 30px;
+            margin-left: 130px;
+        }
+
+
+        #yuki, #yu{
+            width:50px;
+            height:50px;
+            margin: 15px;
+            float:left;
+            border-radius: 50%;
+            border-width: 0;
+            font-weight:bold;
+            font-size:16px;
+        }
+
+
+        input:nth-child(4) {
+            font-size: 20px;
+            background-color: red;
+        }
+        input:nth-child(8) {
+            font-size: 20px;
+            background-color: orange;
+        }
+        input:nth-child(12) {
+            font-size: 20px;
+            background-color: yellow;
+        }
+        input:nth-child(16) {
+            font-size: 20px;
+            background-color: violet;
+        }
+        input:nth-child(20) {
+            font-size: 20px;
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="maytinh">
+    <input id="result" type="text" style="margin-left: 20px;height: 30px;width: 270px;background-color:pink">
+</div>
+
+<div id="banphim">
+
+<input id="yuki" type="button" value="7" onclick="result.value+=this.value"/>
+<input id="yuki" type="button" value="8" onclick="result.value+=this.value"/>
+<input id="yuki" type="button" value="9" onclick="result.value+=this.value"/>
+<input id="yu" type="button" value="/" onclick="result.value+=this.value"/>
+
+<input id="yuki" type="button" value="4" onclick="result.value+=this.value"/>
+<input id="yuki" type="button" value="5" onclick="result.value+=this.value"/>
+<input id="yuki" type="button" value="6" onclick="result.value+=this.value"/>
+<input id="yu" type="button" value="*" onclick="result.value+=this.value"/>
+
+<input id="yuki" type="button" value="1" onclick="result.value+=this.value"/>
+<input id="yuki" type="button" value="2" onclick="result.value+=this.value"/>
+<input id="yuki" type="button" value="3" onclick="result.value+=this.value"/>
+    <input id="yu" type="button" value="-" onclick="result.value+=this.value"/>
+
+<input id="yuki" type="button" value="0" onclick="result.value+=this.value"/>
+<input id="yuki" type="button" value="." onclick="result.value+=this.value"/>
+<input id="yuki" type="button" value="AC" onclick="result.value=''"/>
+        <input id="yu" type="button" value="+" onclick="result.value+=this.value"/>
+
+<input id="yuki" type="button" value="%" onclick="result.value+=this.value"/>
+<input id="yuki" type="button" value="CE" onclick="result.value=result.value.substr(0,result.value.length-1)">
+    <input id="yuki" type="button">
+<input id="yu" id = "equ" type="button" value="=" onclick="result.value=eval(result.value)"/>
+
+<div>
+
+</body>
+</html>

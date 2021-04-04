@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-image : url("https://phunugioi.com/wp-content/uploads/2020/04/hinh-nen-chu-love-dep-lang-man-nhat-cho-may-tinh.jpg");
+        }
+    </style>
+</head>
+<body>
+<input  type="text" id="toan" placeholder="Nhập điểm Toán">
+<input type="text" id="ly" placeholder="Nhập điểm Lý">
+<input type="text" id="hoa" placeholder="Nhập điểm Hóa">
+<button style="height: 30px" type="button" onclick="tong()">Điểm Tổng </button>
+<button style="height: 30px" type="button" onclick="trungbinh()">Điểm Trung Bình </button><br>
+<div ></div>
+<input type="text" id="do" placeholder="Nhập độ C">
+<button style="height: 30px" type="button" onclick="chuyendo()">Chuyển độ F </button><br>
+
+<input type="text" id="hinhtron" placeholder="Nhập bán kính">
+<button style="height: 30px" type="button" onclick="dientich()">Diện Tích</button>
+<button style="height: 30px" type="button" onclick="chuvi()">Chu Vi</button>
+
+<script>
+    function tong() {
+      let a=  document.getElementById("toan").value ;
+        let b= document.getElementById("ly").value ;
+        let c= document.getElementById("hoa").value ;
+        let t= parseInt(a)+parseInt(b)+parseInt(c);
+        alert("Điểm tổng:" +t);
+
+    }
+
+    function trungbinh() {
+        let a=  document.getElementById("toan").value ;
+        let b= document.getElementById("ly").value ;
+        let c= document.getElementById("hoa").value ;
+        let tb= (parseInt(a)+parseInt(b)+parseInt(c))/3;
+        alert("Điểm trung bình : " + tb);}
+
+    function chuyendo() {
+        let d=  document.getElementById("do").value ;
+        let f= [5*(parseInt(d)-32)]/9;
+        alert("Độ F: " +f);}
+
+    function dientich() {
+        let r=  document.getElementById("hinhtron").value ;
+        let s= parseInt(r)*parseInt(r)*3.14;
+        alert("Diện tích :" +s);}
+
+    function chuvi() {
+        let r=  document.getElementById("hinhtron").value ;
+        let p= parseFloat(r)*2*3.14
+        alert("Chu vi:" +p);}
+
+</script>
+</body>
+</html>
