@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Có phải Năm Nhuận hay không</title>
+</head>
+<body>
+<script>
+    let nam= parseInt(prompt("Year"));
+    let ketqua= false;
+    let chiahetcho4=nam%4==0;
+    if (chiahetcho4){
+        let chiahetcho100=nam%100==0;
+        if (chiahetcho100){
+            let chiahetcho400=nam%400==0;
+            if (chiahetcho400){
+                ketqua=true;
+            }
+
+        } else {ketqua=true;}
+    }
+    if (ketqua){
+        alert(nam + "là năm nhuận");}
+    else {
+    alert(nam + "không phải năm nhuận");}
+</script>
+</body>
+</html>

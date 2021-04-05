@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch-Case</title>
+</head>
+<body>
+<script>
+    //Bai 1
+    switch (browser) {
+        case "Edge":
+            alert("YOu've got the Edge!";
+            break;
+        case "Chrome":
+        case "Firefox":
+        case "Safari":
+        case "Opera":
+            alert("Okay we support these browsers too");
+            break;
+        default:
+            alert("We hope that this page looks ok!")
+    }
+
+    //Bai 2
+    let a = prompt("a?", "");
+    switch (a) {
+        case 0:
+            alert(0);
+            break;
+        case 1:
+            alert(1);
+            break;
+        case 2:
+        case 3:
+            alert("2,3");
+            break;
+
+    }
+
+    //bai3
+    let value = prompt("Type a number", 0);
+    if (value > 0) {
+        alert(1);
+    } else if (value < 0) {
+        alert(-1);
+    } else {
+        alert(0);
+    }
+    // Bước 5 thay thế cấu trúc if bằng switch-case không thể thực hiện vì switch-case chỉ dùng cho so sánh bằng hoặc khác,không dùng được với ">/<"
+    nếu nhận giá trị từ bước 4 thì được
+
+    let value = prompt("Type a number", 0);
+    switch (value) {
+        case 5:
+            alert(1);
+            break;
+        case -5:
+            alert(-1);
+            break;
+        default:
+            alert("không biết");
+    }
+</script>
+</body>
+</html>
