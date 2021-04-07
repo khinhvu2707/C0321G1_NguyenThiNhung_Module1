@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<style>
+    body {
+        background-image : url("https://wallpaperaccess.com/full/6975.jpg");
+    }
+    #maytinh{
+        width:320px;
+        margin-top: 100px;
+        margin-left: 130px;
+
+
+    }
+    #banphim{
+
+        width: 320px;
+        margin-top: 30px;
+        margin-left: 130px;
+    }
+
+
+    .yuki, .yu{
+        background-color: pink;
+        width:50px;
+        height:50px;
+        margin: 15px;
+        float:left;
+        border-radius: 50%;
+        border-width: 0;
+        font-weight:bold;
+        font-size:16px;
+    }
+    .yuki{
+        background-color: pink;
+    }
+    .yu{
+        background-color:darksalmon ;
+    }
+
+
+</style>
+</head>
+<body>
+
+<div id="maytinh">
+    <input id="result" type="text" style="margin-left: 20px;height: 30px;width: 270px;background-color:white">
+</div>
+
+<div id="banphim">
+
+    <button class="yuki" type="button" value="1" onclick="so('1')">1</button>
+    <button class="yuki" type="button" value="2" onclick="so('2')">2</button>
+    <button class="yuki" type="button" value="3" onclick="so('3')">3</button>
+    <button class="yu" type="button" value="+" onclick="so('+')">+</button>
+
+    <button class="yuki" type="button" value="4" onclick="so('4')">4</button>
+    <button class="yuki" type="button" value="5" onclick="so('5')">5</button>
+    <button class="yuki" type="button" value="6" onclick="so('6')">6</button>
+    <button class="yu" type="button" value="-" onclick="so('-')">-</button>
+
+    <button class="yuki" type="button" value="7" onclick="so('7')">7</button>
+    <button class="yuki" type="button" value="8" onclick="so('8')">8</button>
+    <button class="yuki" type="button" value="9" onclick="so('9')">9</button>
+    <button class="yu" type="button" value="*" onclick="so('*')">x</button>
+
+    <button class="yuki" type="button" value="C" onclick="xoa('C')">C</button>
+    <button class="yuki" type="button" value="0" onclick="so('0')">0</button>
+    <button class="yuki" type="button" value="=" onclick="bang('=')">=</button>
+    <button class="yu" type="button" value="/" onclick="so('/')">/</button>
+    </div>
+    <script>
+        function so(a) {
+
+
+            document.getElementById("result").value+=a;
+        }
+
+
+
+       function xoa() {
+
+            document.getElementById("result").value='';
+       }
+       function bang() {
+
+            document.getElementById("result").value=eval(document.getElementById("result").value);
+
+       }
+
+
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc điều kiện 1</title>
+</head>
+<body>
+<script>
+    let a = prompt("nhap số thứ nhât");
+    let b = prompt("nhập số thứ 2");
+    let c = a % b;
+    if (b!= 0) {
+        if(c==0){
+        alert(+a +"chia hết cho" +b);
+    } else
+    {
+        alert(+a + "không chia hết cho" +b);
+    }}
+
+    // bai 2
+    let tuoi = prompt("nhập tuổi");
+    if (tuoi<15){alert("đủ tuổi vào học lớp 10");
+    } else {alert("chưa đủ tuổi vào học lớp 10");}
+
+    //bai 3
+    let so= prompt("nhập số");
+    if (so!=0){
+        if (so<0){
+            alert(+so + "bé hơn 0");
+        } else {alert(+so + "lớn hơn 0");}
+    }
+
+    //bài 4
+     let d=prompt("nhập a");
+    let e=prompt("nhập b");
+    let f=prompt("nhập c");
+    if (d>e){
+        if (d>f){
+            alert(+d+"là số lớn nhất");
+        } else if(e>f){alert(+e + "là số lớn nhất");
+        }else {alert(+f + "là số lớn nhất");
+    }}
+
+    //bài 5
+    let diemkt= prompt("nhập điểm kiểm tra");
+    let diemthigiuaki= prompt("nhập điểm thi giữa kì");
+    let diemcuoiki= prompt("nhập điểm thi cuối kì");
+    let tb = (diemkt + (diemthigiuaki*2) + (diemcuoiki*3))/6
+    if (tb>8){alert("giỏi");
+    } else if (tb>6){alert("khá");
+    } else if (tb>5){alert("trung bình");
+    } else {alert("kém");}
+
+    //bài 6
+    let doanhso= prompt("nhập doanh số");
+    let hoahong1 = doanhso/100*10;
+    let hoahong2 = doanhso/100*30;
+    let hoahong3 = doanhso/100*50;
+    let hoahong4 = doanhso/100*75;
+    if (doanhso> 10000000){alert("hoa hồng"+ hoahong4);
+    } else if (doanhso>5000000){alert("hoa hồng" + hoahong3);
+    } else if (doanhso>2000000){alert("hoa hồng" + hoahong2);
+    } else {"hoa hồng" + hoahong1;}
+
+    //bài 7
+    let thoigian = prompt("nhập số phút");
+    let cuoc1 = (thoigian*200);
+    let cuoc2 = (thoigian*400);
+    let cuoc3 = (thoigian*800);
+    if (thoigian>20){alert("cước" +cuoc3);
+    } else if(thoigian>10){alert("cước" +cuoc2);
+    } else {alert("cước" +cuoc1);}
+    
+</script>
+</body>
+</html>
