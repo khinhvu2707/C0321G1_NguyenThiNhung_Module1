@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vòng lặp 2</title>
+</head>
+<body>
+<script>
+    // bài 1 dãy fibonacci
+    let x=0;
+    let y=1;
+    let a= prompt("Số lượng số trong dãy fibonacci");
+    for (i = 1; i <= a; i++)
+    {
+        document.write(x+",");
+        z = x +y;
+        x = y;
+        y = z;
+
+    }
+
+    // bài 2 giai thừa
+        let x=prompt("số nguyên dương");
+    let n=1
+    let giaithua =1;
+        for (i = 1; i <= x; i++)
+        {n=i;
+     giaithua *=n;
+
+        } document.write(giaithua);
+
+    // bài 3 in tam giác vuông
+    //
+    let x = parseInt(prompt("nhap so canh tam giac"))
+    // hình 1
+        for (i=0;i<=x;i++){
+            for(j=0;j<=i;j++){
+
+            document.write("*")
+        }document.write("<br>")
+        }
+
+    //hình 2
+        for (i=0;i<=x;i++){
+            for(j=0;j>=i;j--){
+
+                document.write("*")
+            }document.write("<br>")
+        }
+    //hình 3
+
+    for (i=0;i<=x;i++){
+            for(j=0;j<=x;j++){
+                if(j<=(x-i)){
+                document.write("&nbsp&nbsp")}
+            else {document.write("*");}
+        }document.write("<br>");
+        }
+    // hình 4
+        for (i=0;i<=x;i++){
+            for(j=0;j<=x;j++){
+                if(i>=j){
+                    document.write("&nbsp&nbsp")}
+                else {document.write("*");}
+            }document.write("<br>");
+        }
+
+    //bài 4 In hình chữ nhật
+    let x = prompt("chiều dài");
+    let y = prompt("chiều rộng");
+    for (let i = 0; i < y; i++) {
+        for (let j = 0; j < x; j++) {
+            if (i == 0) {
+                document.write("*");
+            } else if (i == y - 1) {
+                document.write("*");
+            } else {
+                if (j == 0 || j == x - 1) {
+                    document.write("*");
+                } else {
+                    document.write("&nbsp&nbsp");
+                }
+            }
+
+
+        }
+        document.write("<br>");
+    }
+
+    //Cách 2
+    for (let i=0;i<=y;i++){
+        for (let j=0;j<=x;j++) {
+            if (i == 0 || i == y || j == 0 || j == x) {
+                document.write("*");
+
+            } else {
+                document.write("&nbsp&nbsp");
+            }
+        }document.write("<br>")
+
+    }
+
+
+    //bài 5: Tính lãi suất ngân hàng
+    let a=parseInt(prompt("Số tiền gốc"));
+    let b=parseInt(prompt("Số tháng muốn vay"));
+
+
+    let laithang1=0;
+    for(let i=1;i<=b;i++){
+
+        laithang1=(a*7/100);
+        a+=laithang1;
+
+
+    }
+    document.write(laithang1);
+
+
+    //
+    // bài 6 : In hình trái tim chưa hoàn thành
+    let x = prompt("chiều dài");
+    let y = prompt("chiều rộng");
+
+    // for (let i=0;i<=y;i++){
+    //     for (let j=0;j<=x;j++) {
+    //         if (i == 0 || i == (y/2) || j == 0 || j == (x/2)) {
+    //             document.write("*");
+    //             i++;j++;
+    //         } else {
+    //             document.write("&nbsp&nbsp");
+    //         }
+    //     }document.write("<br>")
+    //
+    // }
+    for (i=x/3;i<=x/2;i++){
+
+                for(j=0;j<=x/2;j++){
+                    if(j<=(x/2-i)){
+                    document.write("&nbsp");
+                    }
+                else {document.write("*");}
+            }
+                document.write("<br>");
+            }
+
+
+    for (i=0;i<x;i++){
+                for(j=x;j>i;j--) {
+                    if (j <= x - i) {
+                        document.write("*")
+                    } else{ document.write("&nbsp&nbsp")
+                }
+            }document.write("<br>")}
+
+</script>
+</body>
+</html>

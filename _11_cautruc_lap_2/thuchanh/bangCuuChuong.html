@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng Cửu Chương</title>
+    <style>
+         td{
+             border-radius: 50px;
+             background-color: white;
+         }
+    </style>
+</head>
+<body>
+<script>
+    let bang;
+    bang = "<table border='2',height='60', width='30' style='background-color: powderblue' cellpadding='7' cellspacing='10'>"
+    for (let i=1;i<=9;i++){
+        bang =bang +"<tr>";
+        for (let j=2;j<=9;j++){
+            f=i*j;
+            bang=bang+"<td>"+j +"x"+i +"="+f+"</td>";
+
+        }
+        bang = bang + "</tr>";
+
+    }
+    bang=bang + "</table>";
+    document.write(bang);
+
+</script>
+</body>
+</html>

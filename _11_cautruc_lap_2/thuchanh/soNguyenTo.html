@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>số nguyên tố</title>
+</head>
+<body>
+<p id="result"></p>
+</body>
+<script>
+    let result = "Các số nguyên tố là: ";
+    let numbers;
+    do {
+        numbers = parseInt(prompt("Số lượng số nguyên tố cần in ra: "));
+    }while (numbers <= 0);
+    let count = 0, n = 2;
+    while (count < numbers){
+        if (checkSNT(n)){
+            result += n + " ";
+            count++;
+        }
+        n++;
+    }
+    document.write(result);
+    //hàm kiểm tra số nguyên tố
+    function checkSNT(x){
+        for (let i = 2; i<= Math.sqrt(x); i++){
+            if (x % i == 0) return false; //không phải số nguyên tố
+        }
+        return true; // là số nguyên tố
+    }
+</script>
+</html>

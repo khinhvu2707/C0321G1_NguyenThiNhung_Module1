@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><input id="good" type="range" min="0" max="1" value="0" onclick="game('1')"></td>
+        <td><h3>GOOD</h3></td>
+    </tr>
+    <tr>
+        <td><input id="fast" type="range" min="0" max="1" value="1" onclick="game('3')"></td>
+        <td><h3>FAST</h3></td>
+    </tr>
+    <tr>
+        <td><input id="cheap" type="range" min="0" max="1" value="1" onclick="game('2')"></td>
+        <td><h3>CHEAP</h3></td>
+    </tr>
+
+</table>
+</div>
+<script>
+    //Chưa hoàn thiện
+    function game(x) {
+        if (x==1){
+            document.getElementById('cheap').value=0;
+        }else if (x==2){
+            document.getElementById('fast').tvalue=0;
+        }else if (x==3){
+            document.getElementById('good').value=0;
+        }
+
+    }
+</script>
+</body>
+</html>
