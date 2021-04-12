@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng</title>
+</head>
+<body>
+<script>
+    //Bài 1:
+    // Viết chương trình khởi tạo mảng 2 chiều, gồm một bộ các phần tử có sẵn,  in ra các phần tử trong mảng.
+    let a = [
+        [1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7]
+    ];
+    for (let i in a) {
+        console.log("row " + i);
+        for (let j in a[i]) {
+            console.log(" " + a[i][j]);
+        }
+    }
+
+    //Bài 2
+    // Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược
+    let a = ['c', 's', 'c', '2', '6', '1'];
+    let b = a.reverse();
+    document.write(b.join(""));
+
+    //Bài 3
+    // Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong mảng.
+    let a = "146287987915638709";
+    let b = a.split("");
+    document.write(b);
+    document.write(". Số kí tự là: " + (b.length));
+
+    //Bài 4:Viết một chương trình để đếm số từ trong một chuỗi
+    let a = "Không có việc gì khó chỉ sợ lòng không bền";
+    let c = a.split(" ");
+    document.write(c);
+    document.write(". Số từ là: " + c.length);
+
+    //Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.
+    let a = "xuân hạ thu đông";
+    let b = "mai lan cúc trúc";
+    let c = a.localeCompare(b);
+    if (c === 0) {
+        document.write("2 chuỗi giống nhau")
+    } else {
+        document.write("2 chuỗi không giống nhau");
+    }
+
+    // Bài 6: Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )
+    let a = " hoa mai-hoa hồng hoa-sen hoa lan-ý hoa ly";
+    let b = a.replace(/-/g, '_');
+    document.write(b);
+</script>
+</body>
+</html>

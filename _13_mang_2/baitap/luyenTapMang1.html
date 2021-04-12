@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập Mảng p1</title>
+</head>
+<body>
+<script>
+    //Bài 1 :
+    // Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.
+    // Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.
+
+    let songuyen = [7,87,3,4,34,27,6,5,95,10];
+     let ketqua=0;
+     for (let x=0;x<songuyen.length;x++){
+         if(songuyen[x]>=10){
+             ketqua++;
+         }
+     } document.write("số số nguyên lớn hơn hoặc bằng 10 là :" +ketqua);
+
+     // Bài 2 :
+    // Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+    // Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+
+    let songuyen = [7,87,3,95,4,34,27,6,5,10];
+     let x=0;
+     let a=0;
+    let max = songuyen[0];
+    for (x;x<songuyen.length;x++){
+        if(songuyen[x]>=max){
+            max=songuyen[x];
+            a=x;
+        }
+    }
+    document.write("số nguyên lớn nhất là :"  +a);
+
+    //Bài 3:
+    // Viết chương trình khởi tạo mảng số nguyên.
+    // Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.
+    let songuyen = [7,87,3,4,34,27,6,5,95,10];
+    let x=0;
+    let sum=0;
+    let max = songuyen[0];
+    for (x;x<songuyen.length;x++){
+        sum+=songuyen[x];
+        if(songuyen[x]>=max){
+            max=songuyen[x];
+        }
+    } document.write("số nguyên lớn nhất là: " +max + "Trung bình của các phần tử trong mảng là: " +(sum/10));
+
+    // Bài 4:
+    // Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+    let songuyen = [7,87,3,4,34,27,6,5,95,10];
+    songuyen.reverse();
+    document.write(songuyen);
+
+    //Bài 5:
+    // Viết chương trình đếm số nguyên âm trong một chuỗi
+    let chuoi=["1","-5","-7","34","81","-36","9","-44","-82","-1","0","-1412"];
+    let ketqua = 0;
+    for (let x=0;x<chuoi.length;x++){
+        if(chuoi[x]<0){
+            ketqua++;
+        }
+    } document.write(ketqua);
+
+    //Bài 6: chưa hoàn thành
+    // Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.
+    // Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".
+    let songuyen = [7,87,3,4,34,27,6,5,95,10];
+    let v=parseInt(prompt("Nhập số bất kì"));
+    let flag=true;
+    for (let x=0;x<songuyen.length;x++){
+        if (v===songuyen[x]){
+            flag= true;
+            alert("V is in the array")
+        }
+        if(!flag){
+            alert("V is not in the array");}
+
+    }
+
+
+    // Bài 7:
+    // Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.
+    //     Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng
+    // (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)
+
+    let songuyen = [7,87,3,4,34,27,6,5,95,10];
+    let v= parseInt(prompt("Nhập số bất kì"));
+    let flag = true;
+    for(let x=0; x<songuyen.length; x++) {
+        if (v === songuyen[x]) {
+            flag=true;
+            songuyen.splice(x, 1);
+            document.write(songuyen);
+
+        }
+        if(!flag){document.write("Số này ko có trong mảng")
+       }
+    }
+
+    //Bài 8:
+    // Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+    // Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
+    let songuyen = [7,87,3,4,34,27,6,5,95,10];
+    let kq= songuyen.sort(function(a, b){return b- a})
+    document.write(kq);
+
+
+    // Bài 9:
+    // Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b.
+    // Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên.
+    // Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.
+    let a = [7,87,3,4,34,27,6,5,95,10];
+    let b = [1,7,89,24,3,277,88,25,795,420];
+    let c= a.concat(b);
+    document.write(c);
+</script>
+</body>
+</html>

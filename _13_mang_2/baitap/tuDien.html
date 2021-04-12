@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+
+    <input type="text" id="tu"  placeholder="nhập từ cần tìm kiếm">
+    <button type="button" onclick="timkiem()">Start</button>
+    <p id="b">Kết quả</p>
+
+<script>
+
+
+function timkiem() {
+    let anh= ["red","blue","green","orange"];
+    let viet= ["đỏ","xanh da trời","xanh lá cây","cam"];
+    let a= document.getElementById("tu").value;
+    // let flag = false;
+    for(let x=0; x<anh.length; x++) {
+        if (a===anh[x]) {
+                // flag == true;
+            document.getElementById("b").innerText = viet[x];
+            break;
+        }
+        else if (a===viet[x]){
+            // flag == true;
+            document.getElementById("b").innerText= anh[x];
+            break;
+           }
+
+             else {
+
+                 document.getElementById("b").innerText ="Không có trong từ điển"
+
+        }
+    }
+}
+
+</script>
+</body>
+</html>
