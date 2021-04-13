@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi nhiệt độ</title>
+</head>
+<body>
+<p>
+    <label>Temperature Converter</label><br>
+    <label>Type a value in the Fahrenheit field to convert the value to Celcius:</label><br>
+<label>Fahrenheit</label>
+    <input id="fah" type="number" oninput="tc(this.value)" onchange="tc(this.value)">
+</p>
+<p>Celcius: <span id="ketqua"></span></p>
+<script>
+    function tc(num) {
+       kq= (parseFloat(num)-32)/1.8;
+       document.getElementById("ketqua").innerHTML=kq;
+    }
+</script>
+</body>
+</html>

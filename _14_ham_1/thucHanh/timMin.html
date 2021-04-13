@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị nhỏ nhất của Mảng</title>
+</head>
+<body>
+
+<script>
+    function timmin(arr) {
+        if(arr.length == 0)
+            return "dãy rỗng";
+
+        let min=arr[0];
+        for (let i=1;i<arr.length;i++){
+            if(arr[i]<min){
+                min=arr[i];
+            }
+        } return min;
+
+    }
+   
+    let arr1 = [3, 5, 1, 8, -3, 7, 8];
+    let min1 = timmin(arr1);
+    document.write("Mảng 1 có min là: " + min1 +"<br>");
+    let arr2= [7, 12, 6, 9, 20, 56, 89];
+    let min2 = timmin(arr2);
+    document.write("Mảng 2 có min là: " + min2 +"<br>");
+    let arr3= []
+    let min3 = timmin(arr3);
+    document.write("Mảng 3 có min là:" +min3 +"<br>");
+    let arr4= [0, 0, 0, 0, 0, 0]
+    let min4 = timmin(arr4);
+    document.write("Mảng 4 có min là:" +min4 +"<br>");
+
+</script>
+</body>
+</html>

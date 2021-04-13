@@ -30,16 +30,28 @@
 
     //Bài 3
     // Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong mảng.
-    let a = "146287987915638709";
+    let a = "1he9ru86g7et";
     let b = a.split("");
-    document.write(b);
-    document.write(". Số kí tự là: " + (b.length));
+    let count=0;
+    for (i=0;i<d.length;i++){
+        if (!isNaN(b)){
+            count++;
+        }
+
+    }
+
+    document.write(" Số kí tự là: " + (count));
 
     //Bài 4:Viết một chương trình để đếm số từ trong một chuỗi
     let a = "Không có việc gì khó chỉ sợ lòng không bền";
     let c = a.split(" ");
-    document.write(c);
-    document.write(". Số từ là: " + c.length);
+    let count=0;
+    for (let i=0;i<c.length;i++) {
+        if (isNaN(c)) {
+            count++;
+        }
+    }
+    document.write(" Số từ là: " + count);
 
     //Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.
     let a = "xuân hạ thu đông";

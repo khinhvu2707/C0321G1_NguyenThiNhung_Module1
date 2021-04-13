@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và Gọi Hàm</title>
+</head>
+<body>
+<script>
+    function confirm1(answer) {
+        let result = "";
+        if (answer) {
+            result = "Hello";
+        } else {
+            result = "Bye";
+        }
+        return result;
+    }
+
+    let ca = confirm("Start?");
+    let ans = confirm1(ca);
+    alert(ans);
+
+
+
+</script>
+</body>
+</html>
