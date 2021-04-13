@@ -106,6 +106,16 @@
     let songuyen = [7,87,3,4,34,27,6,5,95,10];
     let kq= songuyen.sort(function(a, b){return b- a})
     document.write(kq);
+    //Cách 2:
+    let songuyen = [7,87,3,4,34,27,6,5,95,10];
+    let sapxeplai=[];
+    let min=0;
+    for(let j=0;j<songuyen.length;j++){
+    for (let i=1;i<songuyen.length;i++){
+        if(songuyen[i]<min){min=songuyen[i]}
+    } sapxeplai.push(min)}
+    document.write(sapxeplai);
+
 
 
     // Bài 9:

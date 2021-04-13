@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi fet-met</title>
+</head>
+<body>
+<script>
+    let feet= parseFloat(prompt("Nhập feet"));
+
+    alert(changeFeetToMet("Đổi sang feet" +feet));
+    let met= parseFloat(prompt("Nhập met"));
+    alert(changeMetToFeet("Đổi sang met" +met));
+
+    function changeFeetToMet() {
+        return (0.305*feet);
+    }
+    function changeMetToFeet() {
+        return (3.279*met);
+
+    }
+</script>
+</body>
+</html>
