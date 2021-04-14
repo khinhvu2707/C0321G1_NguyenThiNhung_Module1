@@ -11,6 +11,7 @@
 <p id="b">Kết quả</p>
 
 <script>
+<<<<<<< HEAD
 
 
     function timkiem() {
@@ -18,6 +19,12 @@
         let viet = ["đỏ", "xanh da trời", "xanh lá cây", "cam"];
         let a = document.getElementById("tu").value;
 
+=======
+function timkiem() {
+        let anh = ["red", "blue", "green", "orange"];
+        let viet = ["đỏ", "xanh da trời", "xanh lá cây", "cam"];
+        let a = document.getElementById("tu").value;
+>>>>>>> 4d3335702ba644764337e8010cf96f83b3b291cf
         for (let x = 0; x < anh.length; x++) {
             if (a === anh[x]) {
                 document.getElementById("b").innerText = viet[x];
@@ -26,12 +33,19 @@
                 document.getElementById("b").innerText = anh[x];
                 break;
             } else {
+<<<<<<< HEAD
                 document.getElementById("b").innerText = "Không có trong từ điển"
 
             }
         }
     }
 
+=======
+                document.getElementById("b").innerText = "Không có trong từ điển";
+            }
+        }
+    }
+>>>>>>> 4d3335702ba644764337e8010cf96f83b3b291cf
 </script>
 </body>
 </html>
