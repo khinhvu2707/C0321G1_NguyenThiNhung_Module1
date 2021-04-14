@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi fet-met</title>
+</head>
+<body>
+<label>Đổi feet sang met</label>
+<input id="feet" type="number" placeholder="Feet" oninput="changeFeetToMet(this.value)" onchange="changeFeetToMet(this.value)">
+<p>Kết quả: <span id="met1"></span></p><br>
+<label>Đổi met sang feet</label>
+<input id="met" type="number" placeholder="Met" oninput="changeMetToFeet(this.value)" onchange="changeMetToFeet(this.value)">
+<p>Kết quả: <span id="feet1"></span></p>
+<script>
+    function changeFeetToMet(feet) {
+        document.getElementById("met1").innerText = (0.305 * parseFloat(feet));
+    }
+    function changeMetToFeet(met) {
+        document.getElementById("feet1").innerText = (3.279 * parseFloat(met));
+    }
+</script>
+</body>
+</html>

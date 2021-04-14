@@ -17,6 +17,7 @@
         let anh = ["red", "blue", "green", "orange"];
         let viet = ["đỏ", "xanh da trời", "xanh lá cây", "cam"];
         let a = document.getElementById("tu").value;
+
         for (let x = 0; x < anh.length; x++) {
             if (a === anh[x]) {
                 document.getElementById("b").innerText = viet[x];
@@ -25,7 +26,8 @@
                 document.getElementById("b").innerText = anh[x];
                 break;
             } else {
-                document.getElementById("b").innerText = "Không có trong từ điển";
+                document.getElementById("b").innerText = "Không có trong từ điển"
+
             }
         }
     }

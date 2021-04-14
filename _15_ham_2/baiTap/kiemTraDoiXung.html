@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đệ Quy</title>
+</head>
+<body>
+<script>
+    function kiemTraDoiXung(a) {
+        let first = 0;
+        let last = a.length - 1;
+        if (first >= last) {
+            return true;
+        } else if (a[first] != a[last]) {
+            return false;
+        } else {
+            a = a.slice(1, a.length - 1);
+            return kiemTraDoiXung(a);
+        }
+    }
+    let a = prompt("Nhập dãy");
+ alert(kiemTraDoiXung(a));
+
+ //Cách 2
+    function checkDoiXung(){
+        for(let i=0;i<b.length/2;i++){
+            if(b[i]!=b[b.length-1-i]){
+                return false;
+            }else{
+                return true
+            }
+        }
+    }
+    let b=prompt("nhập dãy bất kì");
+    alert(checkDoiXung(b));
+</script>
+</body>
+</html>
