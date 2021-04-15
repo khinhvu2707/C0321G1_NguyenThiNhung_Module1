@@ -16,34 +16,48 @@
 <input type="text" id="nhapten" style="margin-left: 10px;width: 530px">
 <button style="margin-top: 10px" type="button" value="them" id="them1" onclick="them()">Add</button>
 <script>
-    let danhsachsanpham = ["Hoa Hồng", "Hoa Mai", "Hoa Đào", "Hoa Lan","Hoa Ly","Hoa Sen","Hoa Cúc"];
+    let danhsachsanpham = ["Hoa Hồng", "Hoa Mai", "Hoa Đào", "Hoa Lan", "Hoa Ly", "Hoa Sen", "Hoa Cúc"];
+
     function them() {
         let a = document.getElementById("nhapten").value;
-        danhsachsanpham.push(a);
-        bang();
+        if (a == "") {
+            alert("Vui lòng nhập tên sản phẩm")
+        } else {
+            if (danhsachsanpham.includes(a)) {
+                alert("Sản phẩm đã tồn tại")
+            } else {
+                danhsachsanpham.push(a);
+                bang();
+            }
+        }
     }
+
     function sua(i) {
         let noidungmoi = prompt("nội dung mới");
         danhsachsanpham[i] = noidungmoi;
         bang();
     }
+
     function xoa(index) {
+        if(confirm("Bạn có chắc chắn muốn xóa không?")){
         danhsachsanpham.splice(index, 1);
         bang()
-    }
+    }}
+
     function bang() {
         let bang2 = "<table width='40%'>";
         for (let i = 0; i < danhsachsanpham.length; i++) {
             bang2 += "<tr style='height: 30px'>";
-            bang2 += "<th>"+(i+1)+"</th>";
-            bang2 += "<th>"+danhsachsanpham[i]+"</th>";
-            bang2 += "<th width='10%'><button type='button' id='sua1' onclick='sua("+i+")'>Edit</button></th>";
-            bang2 += "<th width='10%'><button type='button' id='xoa1' onclick='xoa("+i+")'>Delete</button></th>";
+            bang2 += "<th>" + (i + 1) + "</th>";
+            bang2 += "<th>" + danhsachsanpham[i] + "</th>";
+            bang2 += "<th width='10%'><button type='button' id='sua1' onclick='sua(" + i + ")'>Edit</button></th>";
+            bang2 += "<th width='10%'><button type='button' id='xoa1' onclick='xoa(" + i + ")'>Delete</button></th>";
             bang2 += "</tr>";
         }
         bang2 += "</table>";
-        document.getElementById("result").innerHTML=bang2;
+        document.getElementById("result").innerHTML = bang2;
     }
+
     bang();
 </script>
 </body>

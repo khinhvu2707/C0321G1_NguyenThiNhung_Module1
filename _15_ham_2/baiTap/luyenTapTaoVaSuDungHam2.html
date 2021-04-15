@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm 2</title>
+</head>
+<body>
+<script>
+    //Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+    function tinhBinhPhuong() {
+        let b= parseFloat(a)*parseFloat(a);
+        return b;
+    }
+    let a=prompt("Nhập số");
+    alert(tinhBinhPhuong(a));
+
+    //Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được
+    function tinhDienTich() {
+        let s = r * r * 3.14;
+        return s;
+    }
+    function tinhChuVi() {
+        let c = 2 * r * 3.14;
+        return c;
+    }
+    let r = parseFloat(prompt("Nhập bán kính hình tròn"));
+    document.write("Diện tích là: " + tinhDienTich(r) + "<br>");
+    document.write("Chu vi là: " + tinhChuVi(r));
+
+    //Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+    function tinhGiaiThua() {
+        let n = 1
+        let giaithua = 1;
+        for (i = 1; i <= x; i++) {
+            n = i;
+            giaithua *= n;
+        }
+        return giaithua;
+    }
+    let x = parseInt(prompt("Nhập số nguyên bất kì"));
+    alert("Giai thừa của " + x + " là: " + tinhGiaiThua(x));
+
+    //  Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.
+    function kiemTraKiTuSo() {
+        if (!isNaN(a)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    let a = prompt("nhập kí tự bất kì");
+    alert(kiemTraKiTuSo(a));
+
+    //Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+    function timMin() {
+        if (a < b && a < c) {
+            return a;
+        } else {
+            if (b < c) {
+                return b;
+            } else {
+                return c;
+            }
+        }
+    }
+    let a = prompt("nhập số thứ nhất");
+    let b = prompt("nhập số thứ 2");
+    let c = prompt("nhập số thứ 3");
+    alert(timMin(a, b, c));
+
+    //Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không.
+    // Nếu là nguyên dương trả về true, ngược lại trả về false.
+    function kiemTraSoNguyenDuong() {
+        if (a == parseInt(a) && a > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    let a = prompt("nhập số muốn kiểm tra");
+    alert(kiemTraSoNguyenDuong(a));
+
+
+    //Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+    function doiCho2So() {
+        let c=a;
+         a=b;
+         b=c;
+    }
+    let a= prompt("nhập số thứ nhất");
+    let b= prompt("nhập số thứ 2");
+    doiCho2So(a,b);
+    alert("số thứ nhất là" +a +"số thứ 2 là" +b);
+
+    //Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+
+    //Cách 1:
+      let a=prompt("nhập mảng số nguyên bất kì");
+    alert(daoNguoc(a));
+      function daoNguoc(){
+      let reversed = "";
+      for (let i = a.length - 1; i >= 0; i--) {
+          reversed += a[i]
+      }
+      return reversed;
+      }
+    // Cách 2:
+    function daoNguoc() {
+        return a.split("").reverse().join("");
+    }
+    let a = prompt("nhập mảng số nguyên bất kì");
+    alert(daoNguoc(a));
+
+    //Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+    // Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+    function kiemTraKiTu() {
+        if (arr1.includes(a)) {
+            return ((arr1.split(a)).length-1);
+        } else {
+            return -1;
+        }
+    }
+
+    let arr1 = prompt("nhập mảng kí tự");
+    let a = prompt("nhập kí tự");
+    alert(kiemTraKiTu(arr1, a));
+
+
+</script>
+
+</body>
+</html>
