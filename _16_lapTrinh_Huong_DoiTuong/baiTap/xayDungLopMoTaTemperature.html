@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+<script>
+    class Temperature{
+        constructor(nhietdo) {
+            this.nhietdo=nhietdo;
+        }
+        setDoC(nhietdo){
+            this.nhietdo=nhietdo;
+        }
+        getDoC(){
+            return this.nhietdo;
+        }
+        getDoF(){
+            return this.nhietdo*9/5+32;
+        }
+        getDoK(){
+            return this.nhietdo + 273.15;
+        }
+    }
+    let doC=null;
+    let temperature=new Temperature(doC);
+    do{doC=parseInt(prompt("Nhập nhiệt độ C"));
+        if (doC>-273){temperature.setDoC(doC);
+    alert("Độ C:" +temperature.getDoC()+"Độ F: " +temperature.getDoF() +"Độ K: " +temperature.getDoK());
+    }else{alert("nhập lại")}}
+    while (doC<-273);
+</script>
+</body>
+</html>

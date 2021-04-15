@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình Chữ Nhật</title>
+</head>
+<body>
+<script>
+    class Rectangle{
+
+        constructor(chieudai,chieurong) {
+            this._chieuDai=chieudai;
+            this._chieuRong=chieurong;
+        }
+        setChieuDai(chieudai){
+            this._chieuDai=chieudai;
+        }
+        setChieuRong(chieurong){
+            this._chieuRong=chieurong;
+        }
+
+        getChieuDai(){
+            return this._chieuDai;
+        }
+        getChieuRong(){
+            return this._chieuRong;
+        }
+        getDienTich(){
+            return this._chieuRong*this._chieuDai;
+        }
+        getChuVi(){
+            return (this._chieuDai+this._chieuRong)*2;
+        }
+    }
+     let rectangle= new Rectangle(8,4);
+    alert("Chiều dài: " + rectangle.getChieuDai() +"Chiều rộng: " +rectangle.getChieuRong() +"Diện tích: " +rectangle.getDienTich()+ "Chu Vi: " +rectangle.getChieuDai());
+
+    let a= parseInt(prompt("Nhập chiều dài"));
+    let b= parseInt(prompt("Nhập chiều rộng"));
+    rectangle.setChieuDai(a);
+    rectangle.setChieuRong(b);
+    alert("Chiều dài: " + rectangle.getChieuDai() +"Chiều rộng: " +rectangle.getChieuRong() +"Diện tích: " +rectangle.getDienTich()+ "Chu Vi: " +rectangle.getChuVi());
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Circle</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius, color) {
+            this.radius = radius;
+            this.color = color;
+        }
+        getRadius() {
+            return this.radius;
+        }
+        getColor() {
+            return this.color;
+        }
+        getArea() {
+            return Math.PI * this.radius * this.radius;
+        }
+    }
+
+    let circle = new Circle(2, "red");
+    let radius = circle.getRadius();
+    let area = circle.getArea();
+    let color = circle.getColor();
+    console.log(radius);
+    console.log("Diện tích" + area + color);
+    let a = prompt("Nhập bán kính");
+    let b = prompt("Nhập màu sắc");
+    let circle2 = new Circle(a, b);
+    circle2.getRadius(a, b);
+    console.log("bán kính" + circle2.getRadius());
+    console.log("Diện tích" + circle2.getArea());
+    console.log("màu sắc" + circle2.getColor());
+</script>
+</body>
+</html>

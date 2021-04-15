@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobi phone</title>
+</head>
+<body>
+<script>
+    class MobiPhone {
+        constructor(battery, draft, inbox, outbox, status) {
+            this.battery = battery;
+            this.draft = draft;
+            this.inbox = inbox;
+            this.outbox = outbox;
+            this.status = status;
+        }
+        getCheckStatus() {
+            if (this.status) {
+                document.write("The mobile is ON");
+            } else {
+                document.write("The mobile is OFF");
+            }
+            this.battery--;
+            return this.status;
+        }
+        getStatus() {
+            this.battery--;
+            return this.status;
+        }
+        setStatus(status) {
+            this.battery--;
+            return this.status = status;
+        }
+        getBattery() {
+            return this.battery;
+        }
+        setBattery(battery) {
+            this.battery = battery;
+        }
+        setMessageDraft(message) {
+            if (this.status && this.battery > 0) {
+                this.battery--;
+                this.draft.push(message);
+                iphone.inbox.push(message);
+                this.outbox.push(message);
+                this.battery--;
+                this.draft.pop()
+            } else {
+                document.write("The mobile is OFF or battery low");
+            }
+        }
+        getShowInbox() {
+            if (this.status && this.battery > 0) {
+                this.inbox.join(",");
+                return this.battery--;
+            } else {
+                document.write("The mobile is OFF or battery low");
+            }
+        }
+        getShowOutBox() {
+            if (this.status && this.battery > 0) {
+                this.outbox.join(",");
+                return this.battery--;
+            } else {
+                document.write("The mobile is OFF or..");
+            }
+        }
+    }
+    let nokia = new MobiPhone(50, [], [], [], []);
+    let iphone = new MobiPhone(70, [], [], [], []);
+    nokia.getCheckStatus();
+    nokia.setStatus(true);
+    iphone.setStatus(true);
+    nokia.getStatus();
+    nokia.getBattery();
+    nokia.setBattery(90);
+    nokia.setMessageDraft("Aloha");
+    iphone.getShowInbox();
+    nokia.getShowOutBox();
+    console.log(nokia);
+    console.log(iphone);
+</script>
+</body>
+</html>
