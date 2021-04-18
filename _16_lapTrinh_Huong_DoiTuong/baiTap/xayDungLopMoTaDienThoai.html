@@ -49,6 +49,18 @@
                 document.write("The mobile is OFF or battery low");
             }
         }
+        setMessageDraft2(message) {
+            if (this.status && this.battery > 0) {
+                this.battery--;
+                this.draft.push(message);
+                nokia.inbox.push(message);
+                this.outbox.push(message);
+                this.battery--;
+                this.draft.pop()
+            } else {
+                document.write("The mobile is OFF or battery low");
+            }
+        }
         getShowInbox() {
             if (this.status && this.battery > 0) {
                 this.inbox.join(",");
@@ -75,6 +87,10 @@
     nokia.getBattery();
     nokia.setBattery(90);
     nokia.setMessageDraft("Aloha");
+    let message1= prompt("Nhập tin nhắn mới");
+    nokia.setMessageDraft(message1);
+    let message2= prompt("Nhập tin nhắn muốn trả lời");
+    iphone.setMessageDraft2(message2);
     iphone.getShowInbox();
     nokia.getShowOutBox();
     console.log(nokia);

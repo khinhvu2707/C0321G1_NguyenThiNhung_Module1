@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bóng Đèn- Đèn</title>
+</head>
+<body>
+<script>
+    class Button{
+        constructor(status) {
+            this.status=status;
+        }
+
+        switchOff(lamp){
+         if(this.status==="ON"){
+         lamp.turnOn();
+        } else{lamp.turnOff()}
+        }
+
+    }
+    class Lamp{
+        constructor(status) {
+            this.status=status;
+        }
+        turnOn() {this.status="ON"
+        }
+            turnOff(){this.status ="OFF"
+            }
+        }
+        let a=prompt("Nhập ON hoặc OFF");
+        let button=new Button(a);
+    let bongDen=new Lamp("OFF");
+    button.switchOff(bongDen);
+    document.write(bongDen.status);
+</script>
+</body>
+</html>

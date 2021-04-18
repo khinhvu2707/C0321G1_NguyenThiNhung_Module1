@@ -5,6 +5,10 @@
     <title>Hình Chữ Nhật</title>
 </head>
 <body>
+<div style="width: 1280px; height: 720px; float: left;">
+    <canvas id="canvas_49" width="600" height="450">
+    </canvas>
+</div>
 <script>
     class Rectangle{
 
@@ -31,6 +35,15 @@
         getChuVi(){
             return (this._chieuDai+this._chieuRong)*2;
         }
+        getdispay(){
+            let canvas = document.getElementById("canvas_49");
+            let context = canvas.getContext("2d");
+            context.beginPath();
+            context.fillStyle = "#ffeeff";
+            context.fillRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+            context.fillStyle = "#ff8800";
+            context.fillRect(this._chieuRong,this._chieuDai , 150, 75);}
+
     }
      let rectangle= new Rectangle(8,4);
     alert("Chiều dài: " + rectangle.getChieuDai() +"Chiều rộng: " +rectangle.getChieuRong() +"Diện tích: " +rectangle.getDienTich()+ "Chu Vi: " +rectangle.getChieuDai());
@@ -40,6 +53,9 @@
     rectangle.setChieuDai(a);
     rectangle.setChieuRong(b);
     alert("Chiều dài: " + rectangle.getChieuDai() +"Chiều rộng: " +rectangle.getChieuRong() +"Diện tích: " +rectangle.getDienTich()+ "Chu Vi: " +rectangle.getChuVi());
+
+    rectangle.getdispay()
+
 </script>
 </body>
 </html>

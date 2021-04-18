@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple{
+        constructor(weight,status) {
+            this.weight= weight;
+            this.status= status;
+        }
+        getWeight(){
+            return this.weight;
+        }
+    }
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        say() {
+
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+
+        checkAplle(apple) {
+            if (apple.weight>0 && apple.status==="Chín") {
+                this.eatApple(apple);
+                return apple.getWeight();
+            }
+            else {this.say("Xanh quá,không ăn được!")}
+        }
+
+        eatApple(apple) {
+                this.say("Ngon ghê!");
+                apple.weight--;
+                this.weight++;
+        }
+    }
+    class Tao extends Apple{
+        constructor(weight,status) {
+            super(weight,status);
+        }
+    }
+    class Adam extends Human{
+        constructor(name, gender, weight) {
+            super(name, gender, weight);
+        }
+        say(AText) {
+                console.log(AText);
+        }
+    }
+    class Eva extends Human{
+        constructor(name, gender, weight) {
+            super(name, gender, weight);
+        }
+        say(EText) {
+            console.log(EText);
+        }
+    }
+    let a = new Adam("Adam","male",54);
+    let b= new Eva("Eva","female",47);
+    let c= new Tao(10,"Chín");
+    let d= new Tao(8,"Xanh");
+    let i=1;
+    for(i;i<6;i++){
+    b.checkAplle(c);
+    a.checkAplle(c);}
+    a.checkAplle(d);
+console.log("Tên:" +a.name +"/Giới tính: " + a.gender + "/Cân nặng" + a.weight);
+console.log("Tên:" +b.name + "/Giới tính: "+b.gender+"/Cân nặng" + b.weight);
+console.log("Táo: Cân nặng: " +c.weight);
+</script>
+</body>
+</html>

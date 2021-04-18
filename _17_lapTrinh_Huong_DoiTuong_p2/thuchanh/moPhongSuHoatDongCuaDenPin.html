@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đèn Pin</title>
+</head>
+<body>
+<script>
+    class Battery{
+        constructor(energy) {
+         this.energy =energy;
+        }
+        getDecreaseEnergy(){
+            if(this.energy>0){
+            return this.energy--}
+
+        }
+        setEnergy(energy){
+           this.energy=energy;
+        }
+
+    }
+    class FlassLamp{
+        constructor(status,battery) {
+            this.status=status;
+            this.battery=battery;
+        }
+        getBattery(){
+            return this.battery.getDecreaseEnergy();
+        }
+        setBattery(battery){
+            this.battery=battery;
+        }
+        Light() {
+            if (this.status) {
+                alert("On");
+            } else {
+                alert("Off")
+            }
+
+        }
+        turnOn(){
+            this.status=true;
+        }
+        turnOff(){
+            this.status=false;
+        }
+    }
+    let battery=new Battery();
+    battery.setEnergy(20);
+    let flassLamp=new FlassLamp();
+    flassLamp.setBattery(battery);
+    console.log(flassLamp.getBattery());
+    flassLamp.Light();
+
+    document.write("Turn on")
+    flassLamp.turnOn();
+    flassLamp.Light();
+   console.log(flassLamp.getBattery());
+
+   console.log("Turn off")
+    flassLamp.turnOff();
+    flassLamp.Light();
+
+    document.write("Turn on")
+    flassLamp.turnOn();
+    flassLamp.Light();
+    console.log(flassLamp.getBattery());
+
+</script>
+</body>
+</html>
