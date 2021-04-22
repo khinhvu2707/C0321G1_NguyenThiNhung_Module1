@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 2</title>
+</head>
+<body>
+<script>
+    //Bài 1:Viết một chương trình để nhập lương nhân viên, tính thuế thu nhập và lương ròng
+
+
+    let luong = prompt("nhập lương (triệu)");
+    let luongRong = 0;
+    if (luong > 15) {
+        luongRong = luong - (luong * 30 / 100)
+    } else {
+        if (luong = 15) {
+            luongRong = luong - (luong * 20 / 100)
+            alert(luongRong);
+        } else {
+            if (luong > 7) {
+                luongRong = luong - (luong * 10 / 100);
+                alert(luongRong);
+            } else {
+                luongRong = luong - (luong * 5 / 100);
+            }
+        }
+    }
+
+    //Bài 2:Viết chương trình kiểm tra một ký tự trong bảng chữ cái tiếng anh là nguyên âm hay phụ âm.
+    // Ký tự là bất kỳ được nhập từ bàn phím. Các ký tự nguyên âm bao gồm: 'o', 'u', 'i', 'a', 'e' hoặc 'O', 'U', 'I', 'A', 'E'
+
+    let nguyenAm = "ouiaeOUIAE";
+    let a = prompt("Nhập chữ muốn kiểm tra");
+    if (nguyenAm.includes(a)) {
+        alert(a + " là nguyên âm")
+    } else {
+        alert(a + " là phụ âm")
+    }
+</script>
+</body>
+</html>

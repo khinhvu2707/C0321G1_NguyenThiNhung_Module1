@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng 2 chiều</title>
+</head>
+<body>
+<script>
+
+    //Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.
+    let m = parseInt(prompt("Nhập số thứ nhất"));
+    let n = parseInt(prompt("Nhập số thứ hai"));
+    let sum = 0;
+    function tinhTong() {
+        for (let x = 0; x <= m; x++) {
+            for (let y = 1; y <= n; y++) {
+                if ((x * y) % 2 === 0) {
+                    sum += (x * y)
+                }
+            }
+        }
+        console.log(sum);
+    }
+    tinhTong(m,n)
+
+    // Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.
+    let array = [[1, 7], [3, 4], [3, 3], [7, 2], [11, 10]];
+    let soNguyenTo = [];
+
+    function checkSNT(a) {
+        if (a < 2) {
+            return false
+        } else {
+            for (let i = 2; i <= Math.sqrt(a); i++) {
+                if (a % i === 0) {
+                    return false; //không phải snt
+                }
+            }
+            return true; // là số nguyên tố
+        }
+    }
+    function demNguyenTo() {
+        for (let x = 0; x < array.length; x++) {
+            for (let y = 0; y < array[x].length; y++) {
+
+                if (checkSNT(array[x][y])) {
+                    soNguyenTo.push(array[x][y]);
+                }
+            }
+
+        }
+    }
+
+    demNguyenTo(array);
+    console.log(soNguyenTo);
+    console.log(soNguyenTo.length);
+
+
+    // Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều
+    let array = [[1, 7], [3, 4], [3, 3], [7, 2], [11, 10]];
+    let max = array[0][0];
+    let min = array[0][0];
+    let maxMin = [];
+
+    function timMaxMin() {
+        for (let x = 0; x < array.length; x++) {
+            for (let y = 0; y < array.length; y++) {
+                if (array[x][y] > max) {
+                    max = array[x][y];
+                }
+                if (array[x][y] < min) {
+                    min = array[x][y];
+                }
+            }
+        }
+        maxMin.push(max, min);
+    }
+    timMaxMin(array);
+    console.log(maxMin);
+
+</script>
+</body>
+</html>

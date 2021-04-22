@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 1: Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m.
+    let n=parseInt(prompt("nhập chiều dài"));
+    let m=parseInt(prompt("nhập chiều rộng"));
+
+    for (let i=1;i<=m;i++){
+        for (let j=1;j<=n;j++) {
+            if (i === 1 || i === m || j === 1 || j === n) {
+                document.write("*");
+            } else {
+                document.write("&nbsp&nbsp");
+            }
+        }document.write("<br>");
+    }
+
+    //Bài 2: Vẽ tam giác vuông cân rỗng có chiều cao h
+    let  h=parseInt(prompt("nhập chiều cao"));
+    for(let i=1;i<=h;i++){
+        for(let j=1;j<=h;j++) {
+            if (j===1 || i===j || i===h){
+                document.write("*");
+        } else {document.write("&nbsp&nbsp")}
+    }document.write("<br>")
+    }
+
+    // Bài 3: Vẽ tam giác cân đặc có chiều cao h
+    let  h=parseInt(prompt("nhập chiều cao"));
+    for(let i=0;i<h;i++){
+        for(let j=0;j<(h*2-1);j++) {
+            if (j<=h-1-i|| j>=(h-1+i) || i===h-1){
+                document.write("&nbsp&nbsp");
+        } else {document.write("*")}
+    }document.write("<br>")
+    }
+
+    //Bài 4: Vẽ tam giác cân rỗng có chiều cao bằng h
+    let  h=parseInt(prompt("nhập chiều cao"));
+    for(let i=0;i<h;i++){
+        for(let j=0;j<(h*2-1);j++) {
+            if (j===h-1-i|| j===(h-1+i) || i===h-1){
+                document.write("*");
+        } else {document.write("&nbsp&nbsp")}
+    }document.write("<br>")
+    }
+
+</script>
+</body>
+</html>

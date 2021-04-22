@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <input type="button" value="Add New Drink" onclick="addNew()">
+    <p id="display"></p>
+    <input type="button" value="Oder" onclick="oderDrink()"></th>
+</head>
+<body>
+<script>
+    //     Bài 1: Cho mảng a chỉ chứa các số nguyên
+    //     Xây dựng mảng b là prefix sums của mảng a cụ thể theo công thức:
+    //         b[0]   = a[0]
+    //     b[1]   = a[0] + a[1]
+    //     b[2]   = a[0] + a[1] + a[2]
+    //     ...
+    //     b[n - 1] = a[0] + a[1] + ... + a[n - 1]
+    //     với n là độ dài của mảng a.
+    let a = [1, 5, 7, 3, 53, 56, 7];
+    let b = [];
+    let sum = 0;
+    let n = a.length;
+    for (let i = 0; i < n; i++) {
+        sum += a[i];
+        b[i] = sum;
+    }
+    console.log(b)
+
+    //     Bài 2: Cho 2 mảng A và B chứa số nguyên.
+    //     Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A
+    //     Chú ý các phần tử giống nhau chỉ tính là 1 lần xuất hiện
+    //     Ví dụ:  A=[7,2,5,3,5,3] và B=[7,2,5,4,6,3,5,3] thì kết quả missingValue(A, B) = [4, 6]
+    let a =[3,0,10,3,6,9,2,8,7,4];
+    let b=[8,10,5,3,0,1,9];
+    for (let i=0;i<b.length;i++){
+        if (a.includes(b[i])){
+            b.splice(i,1);
+            i--;
+        }
+
+    } b.sort(function(a,b){return a-b})
+    console.log(b)
+
+
+    //     Bài 3: Cho một danh sách các phân số, hãy tìm chỉ số của phân số lớn nhất (đếm từ 0)
+    //     Giả định rằng không có các phân số bằng nhau trong tập đầu vào
+    //     Ví dụ: numerators = [5, 2, 5] và denominators = [6, 3, 4], thì kết quả maxFraction(numerators, denominators) = 2.
+    // ⇨	5/4 là phân số lớn nhất, có chỉ số là 2.
+    let n = prompt("số lượng phần tử trong mảng tử số");
+    let numerators = [];
+    for (let i = 0; i < n; i++) {
+        numerators[i] = parseInt(prompt("nhập phần tử thứ" + i));
+    }
+    let m = prompt("số lượng phần tử trong mảng mẫu số");
+    let denominators = [];
+    for (let i = 0; i < m; i++) {
+        denominators[i] = parseInt(prompt("nhập phần tử thứ" + i));
+    }
+    let phanso = [];
+    let max = numerators[0] / denominators[0];
+    for (let i = 0; i < numerators.length; i++) {
+        for (let j = 0; j < denominators.length; j++) {
+            if (numerators[i] / denominators[j] > max) {
+                max = numerators[i] + denominators[j];
+            }
+            phanso.push(numerators[i] / denominators[j]);
+        }
+    }
+    console.log(phanso);
+    console.log(phanso.indexOf(max));
+
+
+    //     Bài 4: Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ. Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn.
+    let so = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let chu = ["không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "mười"];
+    let a = prompt("Nhập số");
+    let result = "";
+    for (let i = 0; i < a.length; i++) {
+        if (so.indexOf(parseInt(a[i])) !== -1) {
+            let index =so.indexOf(parseInt(a[i]));
+            result += chu[index];
+
+        }
+    }alert(result);
+
+
+
+
+
+    //         Bài 5: Giả sử menu của chúng ta có các loại thức uống như sau:
+    //         Cafe
+    //     Cam vắt
+    //     Nước ép cà rốt
+    //     Nước ép cà chua
+    //     Nước lọc
+    //     Nước dừa
+    //     Viết một chương trình gọi thức uống đơn giản.
+    //         Gợi ý: Trước tiên in ra màn hinh danh sách các loại thức uống cho người dùng chọn lựa
+    //     Đánh dấu theo thứ tự 1 (cafe), 2 (cam vắt), 3(nước ép cà rốt), 4(nước ép cà chua), 5(nước lọc), 6(nước dừa), 7(thoát gọi món)
+    //     Khi người dùng lựa chọn 1 trong số các thức uống, chương trình sẽ hiện đơn giá của thức uống đó và cho phép người dùng nhập số lượng.
+    //     Cuối cùng hiển thị tổng số tiền người dùng cần phải trả.
+    //         Sử dụng vòng lặp do while lặp lại cho người dùng đặt thức uống, kết thúc quá trình đặt thức uống khi người nhấn số 7
+    let b = 0;
+    class Menu {
+        constructor(id, drink, monney, amoun) {
+            this.id = id;
+            this.drink = drink;
+            this.monney = monney;
+            this.amount = amoun;
+        }
+        setId(id) {
+            this.id = id;
+        }
+        getId() {
+            return this.id;
+        }
+        setName(drink) {
+            this.drink = drink;
+        }
+        getName() {
+            return this.drink;
+        }
+        setMonney(monney) {
+            this.monney = monney;
+        }
+        getMoney() {
+            return this.monney;
+        }
+        setAmount(amoun) {
+            this.amount = amoun;
+        }
+    }
+    let listmenu = [];
+    let menu1 = new Menu(1, "Cafe", 20, 0);
+    let menu2 = new Menu(2, "Cam Vắt", 20, 0);
+    let menu3 = new Menu(3, "Nước ép cà rốt", 18, 0);
+    let menu4 = new Menu(4, "Nước ép cà chua", 18, 0);
+    let menu5 = new Menu(5, "Nước lọc", 10, 0);
+    let menu6 = new Menu(6, "Nước dừa", 15, 0);
+    listmenu.push(menu1, menu2, menu3, menu4, menu5, menu6);
+    display();
+
+    function addNew() {
+        let id = prompt(" nhập vào id: ");
+        let menu = prompt(" nhập vào thức uống: ");
+        let monney = prompt(" nhập vào giá: ");
+
+        let check=true;
+        for (let x=0;x<listmenu.length;x++){
+            if((listmenu[x].id ==id || id=="") || (listmenu[x].name==menu || menu=="" ) ||  monney==""){
+                check=false;
+                break;
+            }
+        }
+        if (check)  {
+            let newdrink = new Menu(id, menu, monney);
+            listmenu.push(newdrink);
+            display();
+        }
+
+    }
+    function deletedrink(index) {
+        let confDel = confirm(" bạn có muốn xóa: " + listmenu[index].getName());
+        if (confDel) {
+            listmenu.splice(index, 1);
+        }
+        display();
+    }
+    function editdrink(index) {
+        listmenu[index];
+        let check=true;
+        while (check){
+            let menu = prompt("Bạn chon thông tin cần sửa: \n" +
+                "1.Id\n" +
+                "2.Menu\n" +
+                "3.Money\n" +
+                "4.Exit"
+            );
+            switch (menu) {
+                case "1":
+                    let idNew = prompt("Nhập id cần chỉnh sửa");
+                    listmenu[index].setId(idNew);
+                    break;
+                case "2":
+                    let nameNew = prompt("Nhập đồ uống cần chỉnh sửa");
+                    listmenu[index].setName(nameNew);
+                    break;
+                case "3":
+                    let monneyNew = prompt("Nhập giá tiền cần chỉnh sửa");
+                    listmenu[index].setMonney(monneyNew);
+                    break;
+                case "4":
+                    check=false;
+                    break;
+            }}
+        display();
+    }
+    function oderDrink() {
+        let check2=true
+        do {
+            let oder = prompt("nhập id đồ uống muốn order Hoặc nhập số 7 để trở về");
+            listmenu[oder];
+            if (oder != 7) {
+                alert("đơn giá:" + listmenu[oder - 1].getMoney());
+                let amount = prompt("Nhập số lượng");
+                listmenu[oder - 1].setAmount(amount);
+                b += listmenu[oder - 1].getMoney(oder) * amount
+                alert("tổng tiền là:" + b)
+            } else {
+                check2 = false;
+            }}
+        while (check2) ;
+        display();
+    }
+    function display() {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>ID</th>\n' +
+            '        <th>Name</th>\n' +
+            '        <th>Giá</th>\n' +
+            '        <th>Edit</th>\n' +
+            '        <th>Delete</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < listmenu.length; i++) {
+            tableString += ' <tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + listmenu[i].getId() + '</td>\n' +
+                '        <td>' + listmenu[i].getName() + '</td>\n' +
+                '        <td>' + listmenu[i].getMoney() + '</td>\n' +
+                '        <td><input type="button" value="Edit" onclick="editdrink(' + i + ')"></td>\n' +
+                '        <td><input type="button" value="Delete" onclick="deletedrink(' + i + ')"></td>\n' +
+                '    </tr>';
+        }
+        tableString += '</table>';
+        document.getElementById("display").innerHTML = tableString;
+    }
+</script>
+</body>
+</html>
