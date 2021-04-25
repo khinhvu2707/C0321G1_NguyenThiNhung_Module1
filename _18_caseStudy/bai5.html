@@ -8,20 +8,21 @@
 <script>
 
     //Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.
+
     let m = parseInt(prompt("Nhập số thứ nhất"));
     let n = parseInt(prompt("Nhập số thứ hai"));
-    let sum = 0;
-    function tinhTong() {
-        for (let x = 0; x <= m; x++) {
-            for (let y = 1; y <= n; y++) {
-                if ((x * y) % 2 === 0) {
-                    sum += (x * y)
-                }
-            }
+    let arr1= new Array(m);
+    let sum=0;
+    for(let x=0;x<m;x++){
+        arr1[x]=new Array(n);
+        for (let y=0;y<n;y++){
+            arr1[x][y]=parseInt(prompt("Nhập phần tử"));
+            if (arr1[x][y]%2===0){sum+=arr1[x][y]}
         }
-        console.log(sum);
-    }
-    tinhTong(m,n)
+    } console.log(arr1); console.log(sum);
+
+
+
 
     // Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.
     let array = [[1, 7], [3, 4], [3, 3], [7, 2], [11, 10]];

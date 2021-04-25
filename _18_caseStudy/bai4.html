@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Bài 1: Viết một hàm chuẩn hóa xâu ký tự: biến đổi xâu ký tự thành xâu sao cho trong xâu không có 2 dấu cách liền nhau và bắt đầu mỗi từ phải in hoa. Ví dụ tRuong    TaN   HAI => Truong Tan Hai.
+    //     Và một hàm tìm từ dài nhất trong 1 xâu ký tự. Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím, in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.
+    let n = prompt("Nhập vào xâu kí tự").toLowerCase().split(' ');
+    let arr = [];
+
+    function chuanHoaKiTu(a) {
+        for (let i = 0; i < a.length; i++) {
+            if (a[i].length > 0) {
+                arr.push(a[i]);
+            }
+        }
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+        }
+        arr = arr.join(" ");
+        alert(arr);
+
+    }
+
+    chuanHoaKiTu(n);
+    console.log(arr)
+    let arr2 = arr.split(" ");
+    console.log(arr2)
+
+    function timMax(b) {
+        let max = arr2[0];
+        for (let i = 0; i < arr2.length; i++) {
+            if (arr2[i].length > arr2[0].length) {
+                max = arr2[i];
+            }
+        }
+        console.log(max);
+    }
+
+    timMax(arr2);
+    //Bài 2: Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó
+    //Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.
+    //Có 3 kí tự khác nhau là a, b và c.
+    let s = prompt("nhập xâu kí tự");
+    let kq = "";
+    for (let x = 0; x < s.length; x++) {
+        if (kq.includes(s[x]) === false) {
+            kq += s[x];
+        }
+    }
+    console.log(kq.length);
+
+
+    //Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.
+    //Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s1, s2) = 3.
+    //2 xâu s1 và s2 có 3 kí tự chung: 2 kí tự 'a' và 1 kí tự 'c'.
+    let s1 = prompt("nhập xâu kí tự 1");
+    let s2 = prompt("Nhập xâu kí tự 2")
+    let kq = "";
+    let kq2 = [];
+
+    for (let x = 0; x < s1.length; x++) {
+        if (s2.includes(s1[x]) && kq.includes(s1[x]) === false) {
+            kq += s1[x];
+        }
+    }
+    console.log(kq);
+    let count = new Array(kq.length);
+    for (let a = 0; a < count.length; a++) {
+        count[a] = 0
+    }
+    let count2 = new Array(kq.length);
+    for (let a = 0; a < count2.length; a++) {
+        count2[a] = 0
+    }
+    for (let y = 0; y < kq.length; y++) {
+        for (let j = 0; j < s1.length; j++) {
+
+            if (kq[y] === s1[j]) {
+                count[y]++;
+            }
+        }
+    }
+    console.log(count);
+    for (let b = 0; b < kq.length; b++) {
+        for (let c = 0; c < s2.length; c++) {
+
+            if (kq[b] === s2[c]) {
+                count2[b]++;
+            }
+        }
+    }
+    console.log(count2);
+    for (let c = 0; c < count.length; c++) {
+        if (count[c] > count2[c]) {
+            kq2[c] = count2[c]
+        } else {
+            kq2[c] = count[c]
+        }
+    }
+    console.log(kq2)
+
+    for (let d = 0; d < kq2.length; d++) {
+        alert(" phần tử giống nhau thứ" + (d+1)+ " là " + kq[d] + "số lần" + kq2[d])
+    }
+</script>
+</body>
+</html>

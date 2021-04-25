@@ -76,18 +76,21 @@
         }
     }
 
-    let macdinh = new XoSo(22, 33, 44, 55, 66);
+    let macdinh = new XoSo(6);
     let chienthang = ["27", "7", "11", "3", "7", "7"];
     let check = true;
+let count=0;
 
     function mua() {
+
         let b = parseInt(prompt("Vui lòng nhập 1 nếu bạn muốn tự chọn số\n" +
             "Vui lòng nhập 2 nếu bạn muốn hệ thống tự random"));
-        if (b === 1) {
+        if (b === 1 && count<4) {
             check = true;
             chonXoSo();
+            count++;
         }
-        if (b === 2) {
+        if (b === 2 && count<4) {
             check = false;
             macdinh.setSo1(Math.floor(Math.random() * 100));
             macdinh.setSo2(Math.floor(Math.random() * 100));
@@ -101,6 +104,7 @@
             document.getElementById("display4").innerHTML = macdinh.getSo4();
             document.getElementById("display5").innerHTML = macdinh.getSo5();
             document.getElementById("display6").innerHTML = macdinh.getSo6();
+            count++;
         }
 
     }
@@ -153,6 +157,7 @@
         }
         danhsach6 += '</select>';
         document.getElementById("display6").innerHTML = danhsach6;
+        // count++;
     }
 
     function ketqua() {
